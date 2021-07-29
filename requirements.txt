@@ -1,0 +1,6 @@
+aiohttp
+telethon
+cryptg
+BeautifulSoup4
+bs4
+html5lib

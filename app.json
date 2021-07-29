@@ -1,0 +1,26 @@
+{
+    "name": "UdemyBot",
+    "description": "UdemyBot - A Simple Udemy Free Courses Scrapper",
+    "keywords": [
+        "telegram",
+        "github",
+        "udemy"
+    ],
+    "repository": "https://github.com/gautamajay52/UdemyBot",
+    "success_url": "https://t.me/gbotstoresupport",
+    "website": "https://github.com/gautamajay52",
+    "env": {
+        "API_HASH": {
+            "description": "Get one from https://my.telegram.org/apps",
+            "value": ""
+        },
+        "API_ID": {
+            "description": "Get one from https://my.telegram.org/apps",
+            "value": ""
+        },
+        "TOKEN": {
+            "description": "From BotFather",
+            "value": ""
+        }
+    }
+}
