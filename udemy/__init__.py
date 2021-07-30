@@ -24,4 +24,4 @@ Commands:
 page - which page you wanted to scrap and send links. Default is 1
 """
 
-CMD = "(discudemy|coursevania|udemy_freebies|tutorialbar|real_discount|coursevania|idcoupons)"
+CMD = "(discudemy|coursevania|udemy_freebies|tutorialbar|real_discount|idcoupons)"
