@@ -133,8 +133,8 @@ class Scrapper:
                 await self.__fetch_html(ass, "https://coursevania.com/courses/"),
                 "html5lib",
             )
-            nonce = soup.find_all("script")[22].text[30:]
-            nonce = json.loads(nonce.strip().strip(";"))["load_content"]
+            nonce = soup.find_all("script")[23].text
+            nonce = json.loads(nonce.strip().strip(";").split('=')[1])["load_content"]
             url = (
                 "https://coursevania.com/wp-admin/admin-ajax.php?&template=courses/grid&args={%22posts_per_page%22:%2230%22}&action=stm_lms_load_content&nonce="
                 + nonce
