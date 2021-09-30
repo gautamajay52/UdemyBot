@@ -11,7 +11,7 @@ import aiohttp
 from bs4 import BeautifulSoup as bs
 from yarl import URL
 
-# this code/idea taken from https://github.com/techtanic/Discounted-Udemy-Course-Enroller
+# this code/idea has taken from https://github.com/techtanic/Discounted-Udemy-Course-Enroller
 
 class Scrapper:
     """Udemy Free Courses Scrapper"""
