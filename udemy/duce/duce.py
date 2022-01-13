@@ -133,7 +133,11 @@ class Scrapper:
                 await self.__fetch_html(ass, "https://coursevania.com/courses/"),
                 "html5lib",
             )
-            nonce = soup.find_all("script")[23].text
+            nonce = soup.find_all("script") #[23].text # 22 was the working one, but now new method is used
+            for _, a in enumerate(nonce):
+                if 'load_content' in a.text:
+                    nonce = a.text
+                    break
             nonce = json.loads(nonce.strip().strip(";").split('=')[1])["load_content"]
             url = (
                 "https://coursevania.com/wp-admin/admin-ajax.php?&template=courses/grid&args={%22posts_per_page%22:%2230%22}&action=stm_lms_load_content&nonce="
@@ -145,7 +149,7 @@ class Scrapper:
             all = soup.find_all(
                 "div", attrs={"class": "stm_lms_courses__single--title"}
             )
-            for index, items in enumerate(all):
+            for _, items in enumerate(all):
                 title = items.h5.text
                 url = items.a["href"]
                 soup = bs(await self.__fetch_html(ass, url), "html5lib")
