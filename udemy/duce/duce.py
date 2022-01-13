@@ -3,8 +3,8 @@
 # Copyright (C) 2021-Present Gautam Kumar <https://github.com/gautamajay52>
 
 
-import asyncio
 import json
+import re
 from urllib.parse import unquote
 
 import aiohttp
@@ -133,11 +133,12 @@ class Scrapper:
                 await self.__fetch_html(ass, "https://coursevania.com/courses/"),
                 "html5lib",
             )
-            nonce = soup.find_all("script") #[23].text # 22 was the working one, but now new method is used
-            for _, a in enumerate(nonce):
-                if 'load_content' in a.text:
-                    nonce = a.text
-                    break
+            # nonce = soup.find_all("script") #[23].text # 22 was the working one, but now new method is used
+            nonce = soup.find(string=re.compile('load_content'))
+            # for _, a in enumerate(nonce):
+            #     if 'load_content' in a.text:
+            #         nonce = a.text
+            #         break
             nonce = json.loads(nonce.strip().strip(";").split('=')[1])["load_content"]
             url = (
                 "https://coursevania.com/wp-admin/admin-ajax.php?&template=courses/grid&args={%22posts_per_page%22:%2230%22}&action=stm_lms_load_content&nonce="
