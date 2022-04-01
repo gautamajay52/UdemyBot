@@ -11,7 +11,11 @@ api_hash = os.environ.get('API_HASH')
 START = """
 Hey, I'm an UdemyBot. ⚡
 
-I can send you free Udemy Courses Links.
+I can send you free Udemy Courses Enroll Links with Certificate officially.
+Tip - If the free Enroll option is not there means you have missed the oppurtunity next time come early and redeem your courses 
+
+for any problem contact Developer @Entrepreneur_68
+
 
 Commands:
     /discudemy page
